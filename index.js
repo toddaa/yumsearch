@@ -7,7 +7,6 @@ var remoteFTP = "public.dhe.ibm.com";
 var remoteFile = "/software/ibmi/products/pase/rpms/repo/repodata/d75d4b240e89c9c3cf13f1f7d5d35839a1a20335f8799f4cab5fd0e443e6200c-primary.xml.gz";
 
 var jsonData = {};
-var simpleJson = {}
 
 app.listen(port, function() {
   yum.downloadGZ(remoteFTP, remoteFile, function(err, xmlPath) {

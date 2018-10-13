@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>yum Search</title>
+    <link href="css/stylesheet.css" rel="stylesheet" type="text/css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </head>
+  
+  <body>
+    <div id="container">
+      <div id="toptext">
+        <div id="topcontent">
+          <h1><img id="image" src="img/ibmi.png"> yum search</h1>
+        </div>
+      </div>
+      <div id="bodycontent">
+        <div id="quicksearch">
+          index size: <span id="indexsize"></span>,
+          shortcuts:
+          <span id="qsbutton" OnClick="quickSearch(this);">nodejs</span>
+          <span id="qsbutton" OnClick="quickSearch(this);">python3</span>
+          <span id="qsbutton" OnClick="quickSearch(this);">python2</span>
+          <span id="qsbutton" OnClick="quickSearch(this);">gcc-</span>
+          <span id="qsbutton" OnClick="quickSearch(this);">make</span>
+        </div>
+        <input type="text" id="search" placeholder="Search..">
+        
+        <div id="list2">
+          <ol id="listing">
+          </ol>
+        </div>
+      </div>
+    </div>
+
+<!-- Modal -->
+<div class="modal fade" id="packageModal" tabindex="-1" role="dialog" aria-labelledby="packageModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="packageModalLabel">Package name</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <ul class="list-group">
+            <li id="version" class="list-group-item">Version..</li>
+            <li id="summary" class="list-group-item">Summary..</li>
+            <li id="desc" class="list-group-item">Description..</li>
+            <li id="url" class="list-group-item">URL..</li>
+            <li id="install" class="list-group-item">Install..</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+  
+  <script src="js/index.js"></script>
+</html>
