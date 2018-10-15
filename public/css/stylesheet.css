@@ -21,7 +21,7 @@
      vertical-align: middle;
 }
  #bodycontent {
-    max-width: 64rem;
+    max-width: 72rem;
     padding: 1rem 6rem;
     margin: 0 auto;
 }
@@ -67,9 +67,20 @@
      font-style:normal;
      color:#000000;
      border-left: 1px solid #000000;
+     position: relative;
 }
 
 #list2 p #pkgdesc {
     padding-left: 1em;
     font-size:14px;
+}
+
+#list2 p #pkglic {
+    font-size:12px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    right:0;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }

@@ -75,6 +75,14 @@ function addItem(entry, index) {
   html += "<span id=\"pkgtitle\">" + entry.name + " (" + entry.version.ver + ", " + entry.arch + ")</span></button>";
   html += "<span id=\"pkgdesc\">" + (entry.description.length > descMax ? entry.description.substr(0, descMax) + '...' : entry.description) + "</span>";
   
+  if (entry.hasOwnProperty("format")){
+    entry.format.forEach(function(obj) { 
+      if (obj.name == "rpm:license"){
+        html += "<span id=\"pkglic\" class=\"badge badge-info\">" + obj.elements[0].text + "</span>";
+      }
+    });
+  }
+  
   html += "</p></li></a>";
   
   $( "#listing" ).append(html);
@@ -106,6 +114,14 @@ $('#packageModal').on('show.bs.modal', function (event) {
   modal.find('#url').html('<a target="_blank" href="' + package.url + '">' + package.url + '</a>');
   modal.find('#install').html('<code>yum install ' + package.name + '</code>');
   //modal.find('.modal-body input').val(recipient)
+
+  if (package.hasOwnProperty("format")){
+    package.format.forEach(function(obj) { 
+      if (obj.name == "rpm:license"){
+        modal.find('#license').html(obj.elements[0].text);
+      }
+    });
+  }
 })
 
 //***************************
