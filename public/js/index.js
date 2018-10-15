@@ -50,6 +50,9 @@ function doSearch(searchValue) {
         continue;
       }*/
     }
+    if (count < 1){
+      noResults(searchValue);
+    }
     
   } else {
     populateRandom();
@@ -58,6 +61,7 @@ function doSearch(searchValue) {
 
 function clearItems() {
   $("#listing").empty();
+  $( "#searchError" ).hide();
 }
 
 function populateRandom() {
@@ -66,6 +70,11 @@ function populateRandom() {
     index = getRandomInt(0, entries.length-1)
     addItem(entries[index], index); 
   }
+}
+
+function noResults(search){
+  $( "#searchError" ).show();
+  $( "#searchVal" ).text(search)
 }
 
 function addItem(entry, index) {
@@ -85,7 +94,7 @@ function addItem(entry, index) {
     });
   }
   
-  html += "</p></li></a>";
+  html += "</p></li>";
   
   $( "#listing" ).append(html);
 }
