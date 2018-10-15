@@ -62,11 +62,13 @@
  #list2 ol li {
    padding: 0.1rem 0.5rem;
 }
+#list2 ol li span.fa-li{
+    padding: 1rem;
+ }
 #list2 p {
      padding:8px;
      font-style:normal;
      color:#000000;
-     border-left: 1px solid #000000;
      position: relative;
 }
 

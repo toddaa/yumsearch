@@ -69,8 +69,10 @@ function populateRandom() {
 }
 
 function addItem(entry, index) {
-  var html = "<li><p>";
-  
+  var html = "<li>";
+  html += '<span class=\"fa-li\" ><i class=\"fas fa-angle-double-right fa-lg\"></i></i></span>';
+  html += '<p>';
+
   html += '<button type="button" class="btn btn-lg btn-light" data-toggle="modal" data-target="#packageModal" data-package="' + index + '">';
   html += "<span id=\"pkgtitle\">" + entry.name + " (" + entry.version.ver + ", " + entry.arch + ")</span></button>";
   html += "<span id=\"pkgdesc\">" + (entry.description.length > descMax ? entry.description.substr(0, descMax) + '...' : entry.description) + "</span>";
