@@ -56,6 +56,9 @@ module.exports = {
         switch (true) {
           case info.elements !== undefined:
             packageInfo[info.name] = info.elements[0].text;
+            if (info.name == "format"){
+              packageInfo['format'] = info.elements;
+            }
             break;
           case info.attributes !== undefined:
             packageInfo[info.name] = info.attributes;
